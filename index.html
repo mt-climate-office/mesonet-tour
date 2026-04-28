@@ -27,8 +27,8 @@
   --font-body: "Open Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Courier New", monospace;
 
-  --canvas-w: 5200px;
-  --canvas-h: 3200px;
+  --canvas-w: 4900px;
+  --canvas-h: 2980px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,25 +80,44 @@ html, body {
 
 /* Title band */
 .title-band {
-  left: 1800px; top: 60px; width: 1800px; height: 200px;
+  left: 1200px; top: 60px; width: 2600px; height: 380px;
   text-align: center;
 }
 .title-band .talk-title {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 84px;
+  font-size: 110px;
   line-height: 1.0;
   color: var(--maroon);
   letter-spacing: -0.03em;
   font-weight: 800;
   }
+.title-band .talk-stats {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 34px;
+  color: var(--maroon);
+  margin-top: 20px;
+}
+.title-band .talk-stats .big-number {
+  color: var(--accent-red);
+  font-size: 48px;
+  font-weight: 700;
+  vertical-align: -2px;
+}
+.title-band .talk-links {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: #888;
+  margin-top: 12px;
+}
 .title-band .talk-subtitle {
   font-family: var(--font-display);
   font-weight: 300;
   font-style: italic;
-  font-size: 32px;
+  font-size: 44px;
   color: var(--text);
-  margin-top: 14px;
+  margin-top: 16px;
   }
 
 /* Logo top-left */
@@ -119,7 +138,7 @@ html, body {
 
 /* AGRIMET ZONE */
 .agrimet-zone {
-  left: 200px; top: 380px; width: 1250px; height: 850px;
+  left: 200px; top: 520px; width: 1250px; height: 850px;
 }
 .agrimet-zone .section-label {
   font-size: 60px;
@@ -205,7 +224,7 @@ html, body {
 
 /* HYDROMET ZONE */
 .hydromet-zone {
-  left: 200px; top: 1480px; width: 1250px; height: 920px;
+  left: 200px; top: 1620px; width: 1250px; height: 920px;
 }
 .hydromet-zone .section-label {
   font-size: 60px;
@@ -294,7 +313,7 @@ html, body {
 
 /* TELEMETRY SPLIT ZONE */
 .telemetry-zone {
-  left: 1600px; top: 650px; width: 780px; height: 1500px;
+  left: 1600px; top: 790px; width: 780px; height: 1500px;
 }
 .telemetry-box {
   position: absolute;
@@ -363,7 +382,7 @@ html, body {
 
 /* CYBERINFRA CORE ZONE */
 .cyberinfra-zone {
-  left: 2600px; top: 320px; width: 950px; height: 1320px;
+  left: 2600px; top: 500px; width: 950px; height: 1320px;
   background: rgba(187, 221, 230, 0.15);
   backdrop-filter: blur(4px);
   border-radius: 28px;
@@ -514,7 +533,7 @@ html, body {
 
 /* PRODUCTS ZONE */
 .products-zone {
-  left: 3780px; top: 320px; width: 1000px; height: 2400px;
+  left: 3780px; top: 500px; width: 1000px; height: 2400px;
 }
 .products-zone .zone-title {
   font-family: var(--font-display);
@@ -694,48 +713,8 @@ a.product-tile:hover, a.product-tile:focus-visible {
 
 
 
-/* Hosting indicator badges */
-.hosting-badge {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  padding: 2px 7px;
-  border-radius: 4px;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-  vertical-align: middle;
-  margin-left: 6px;
-}
-.hosting-badge.on-prem {
-  background: rgba(112, 0, 46, 0.12);
-  color: var(--maroon);
-}
-.hosting-badge.gh-pages {
-  background: rgba(0, 0, 0, 0.08);
-  color: #333;
-}
 /* FOOTER BAND */
-.footer-band {
-  left: 1800px; top: 2750px; width: 1800px; text-align: center;
-}
-.footer-band .ft-headline {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 28px;
-  color: var(--maroon);
-  margin-bottom: 8px;
-  }
-.footer-band .ft-headline .big-number {
-  color: var(--accent-red);
-  font-size: 44px;
-  font-weight: 700;
-  vertical-align: -2px;
-}
-.footer-band .ft-meta {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: #6a6a6a;
-}
+
 
 /* === ARROWS (inline SVG layered above content) === */
 .arrows-layer {
@@ -913,7 +892,7 @@ a.product-tile:hover, a.product-tile:focus-visible {
 <!-- The stage holds the canvas (the entire 4000x2400 universe) -->
 <div class="stage" id="stage">
 
-  <div class="canvas" id="canvas" role="region" aria-label="Presentation canvas" style="transform: translate(80px, 80px) scale(0.26);">
+  <div class="canvas" id="canvas" role="region" aria-label="Presentation canvas">
 
     <!-- LOGO (top-left) -->
     <img class="logo" id="logo" alt="Montana Climate Office logo">
@@ -922,6 +901,8 @@ a.product-tile:hover, a.product-tile:focus-visible {
     <div class="zone title-band">
       <div class="talk-title">Montana Mesonet</div>
       <div class="talk-subtitle">How a sensor reading becomes a record</div>
+      <div class="talk-stats"><span class="big-number">215</span> active stations · 127 HydroMet · 88 AgriMet · growing toward 290+</div>
+      <div class="talk-links">climate.umt.edu/mesonet · github.com/mt-climate-office</div>
     </div>
 
     <!-- AGRIMET ZONE -->
@@ -1148,16 +1129,10 @@ a.product-tile:hover, a.product-tile:focus-visible {
       </div>
     </div>
 
-    <!-- FOOTER BAND -->
-    <div class="zone footer-band">
-      <div class="ft-headline">
-        <span class="big-number">215</span> active stations · 127 HydroMet · 88 AgriMet · growing toward 290+ by 2027
-      </div>
-      <div class="ft-meta">climate.umt.edu/mesonet  ·  github.com/mt-climate-office</div>
-    </div>
+
 
     <!-- ARROWS LAYER (sits above the zones) -->
-    <svg class="arrows-layer" viewBox="0 0 5200 3200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="arrows-layer" viewBox="0 0 4900 2980" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <marker id="arrow-agri" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
           <path d="M0,0 L10,5 L0,10 z" fill="#ED8B00"/>
@@ -1248,7 +1223,7 @@ document.getElementById('logo').src = "https://mesonet.climate.umt.edu/api/v2/ma
 const WAYPOINTS = [
   {
     name: "Overview",
-    cx: 2490, cy: 1450, scale: "fit",
+    cx: 2490, cy: 1500, scale: "fit",
     time: "~60 seconds",
     notes: `<p>Open by acknowledging the audience already knows the system. Frame as: <em>"let's get on the same page about the canonical data path so we can have better conversations about it."</em></p>
             <p>The talk is structured around one idea: <em>two networks diverge at the sensor and telemetry layers, then converge into one warehouse and a family of products.</em> That convergence is the whole story.</p>
@@ -1256,7 +1231,7 @@ const WAYPOINTS = [
   },
   {
     name: "AgriMet station",
-    cx: 825, cy: 805, scale: 0.90,
+    cx: 825, cy: 945, scale: 0.90,
     time: "~75 seconds",
     notes: `<p>Two METER instruments: <em>ATMOS 41</em> all-in-one weather, <em>TEROS 12</em> soil probes at four depths. Both plug into the <em>METER ZL6</em> logger with built-in cellular modem.</p>
             <p>If asked why ATMOS 41 vs. discrete sensors: install simplicity, lower failure surface, plug-and-play. Mention that 5 minutes is METER's lower bound for Zentra Cloud uploads — we configure 15 minutes deliberately.</p>
@@ -1264,7 +1239,7 @@ const WAYPOINTS = [
   },
   {
     name: "HydroMet station",
-    cx: 825, cy: 1940, scale: 0.82,
+    cx: 825, cy: 2080, scale: 0.82,
     time: "~75 seconds",
     notes: `<p>Research-grade and discrete: <em>Vaisala HMP155A</em> (T/RH), <em>Apogee SB-110/510ss</em> (BP/SR), <em>RM Young 05108</em> wind at 10m, <em>OTT Pluvio2 L</em> weighing gauge (rain + snow), <em>Acclima TDR-310N</em> at five depths to 1m, <em>Campbell SnowVue10</em>, <em>PTZ camera</em>. Logger is a <em>Campbell CR1000X</em>. (The EMC-1 you may see in the inventory is a Midnite Solar charge controller for battery management, not a logger.)</p>
             <p>Wind is 10m here, 2m on AgriMet — flag this whenever anyone tries to compare wind across networks.</p>
@@ -1272,7 +1247,7 @@ const WAYPOINTS = [
   },
   {
     name: "The Y-split",
-    cx: 2000, cy: 1400, scale: 0.55,
+    cx: 2000, cy: 1540, scale: 0.55,
     time: "~90 seconds",
     notes: `<p>Above the cellular modem, the two networks hit completely different ingestion stacks. <em>METER stations post to Zentra Cloud</em> and we pull from there. <em>Campbell stations talk to a LoggerNet server we run ourselves</em>, in Docker.</p>
             <p>METER and Campbell don't speak each other's protocol natively. So we maintain both pipelines and merge in the database.</p>
@@ -1282,7 +1257,7 @@ const WAYPOINTS = [
   },
   {
     name: "Cyberinfra core",
-    cx: 3075, cy: 980, scale: 0.58,
+    cx: 3075, cy: 1160, scale: 0.58,
     time: "~90 seconds",
     notes: `<p>Both paths land in PostgreSQL — standard Postgres, not TimescaleDB. Schema in <code>mesonet-db</code>: <code>data.raw</code> holds JSONB, <code>data.l0</code> is normalized observations, <code>data.l1</code> is QA/QC-flagged. Metadata tables in the same schema.</p>
             <p>Metadata — every station, sensor model, deployment, element — lives in <em>AirTable</em> as the source of truth. <code>py/update_stations.py</code> syncs it down to Postgres (manual trigger by ops team).</p>
@@ -1291,7 +1266,7 @@ const WAYPOINTS = [
   },
   {
     name: "Products",
-    cx: 4280, cy: 950, scale: 0.48,
+    cx: 4280, cy: 1330, scale: 0.42,
     time: "~75 seconds",
     notes: `<p>Don't dwell. Each tile gets ten seconds.</p>
             <p>Everything calls our public API. Plotly Dash dashboard, Flutter mobile app, Photo Explorer for the HydroMet camera archive, drought dashboards used by the Governor's Drought Committee.</p>
@@ -1300,7 +1275,7 @@ const WAYPOINTS = [
   },
   {
     name: "Closing",
-    cx: 2490, cy: 1450, scale: "fit",
+    cx: 2490, cy: 1500, scale: "fit",
     time: "~45 seconds",
     notes: `<p><em>Two networks, one database, one API, many products.</em></p>
             <p><em>215 active stations</em> as of this morning — 127 HydroMet, 88 AgriMet. Notable: as recently as late 2024 the two were nearly even at 88 and 89. The Army Corps UMRB build-out is doing exactly what it was meant to. Heading toward roughly 420 stations by 2027.</p>
@@ -1320,8 +1295,8 @@ function applyCamera(stop, animate = true) {
   // Resolve "fit" scale: scale so the entire 4000x2400 canvas fits with some margin
   let scale = wp.scale;
   if (scale === "fit") {
-    const margin = 80; // leave room for HUD chrome
-    scale = Math.min((stageW - margin) / 5200, (stageH - margin) / 3200);
+    const margin = 20; // leave room for HUD chrome
+    scale = Math.min((stageW - margin) / 4900, (stageH - margin) / 2980);
   }
   // Position: scale around the canvas point (cx, cy) and translate it to the stage center
   const tx = stageW / 2 - wp.cx * scale;

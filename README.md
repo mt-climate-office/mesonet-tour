@@ -15,6 +15,7 @@ python3 -m http.server 8888
 
 - `→` / `Space` — next stop
 - `←` — previous stop
+- `Home` / `End` — first / last stop
 - `1`–`7` — jump to stop
 - `f` — fullscreen
 

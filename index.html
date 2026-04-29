@@ -533,6 +533,29 @@ html, body {
   margin-top: 10px;
 }
 
+/* Clickable repo sub-cards */
+a.qc-badge {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+a.qc-badge:hover, a.qc-badge:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  outline: 2px solid var(--mco-deep);
+  outline-offset: 2px;
+}
+
+/* Inline repo links */
+a.repo-link {
+  color: var(--mco-deep);
+  text-decoration: none;
+}
+a.repo-link:hover, a.repo-link:focus-visible {
+  text-decoration: underline;
+}
+
 /* PRODUCTS ZONE */
 .products-zone {
   left: 3780px; top: 500px; width: 1000px;
@@ -962,7 +985,7 @@ a.product-tile:hover, a.product-tile:focus-visible {
       <h1 class="talk-title">Montana Mesonet</h1>
       <div class="talk-subtitle">How a sensor reading becomes a record</div>
       <div class="talk-stats"><span class="big-number">215</span> active stations · 127 HydroMet · 88 AgriMet · growing toward 290+</div>
-      <div class="talk-links">climate.umt.edu/mesonet · github.com/mt-climate-office</div>
+      <div class="talk-links"><a href="https://climate.umt.edu/mesonet" target="_blank" rel="noopener" style="color:inherit;">climate.umt.edu/mesonet</a> · <a href="https://github.com/mt-climate-office" target="_blank" rel="noopener" style="color:inherit;">github.com/mt-climate-office</a></div>
     </div>
 
     <!-- AGRIMET ZONE -->
@@ -1041,7 +1064,7 @@ a.product-tile:hover, a.product-tile:focus-visible {
       <div class="telemetry-box zentra">
         <div class="tb-label">Zentra Cloud</div>
         <div class="tb-host">METER-hosted · pulled by MCO</div>
-        <div class="tb-repo">mesonet-db</div>
+        <div class="tb-repo"><a class="repo-link" href="https://github.com/mt-climate-office/mesonet-db" target="_blank" rel="noopener">mesonet-db</a></div>
       </div>
 
       <div class="split-note">
@@ -1051,7 +1074,7 @@ a.product-tile:hover, a.product-tile:focus-visible {
       <div class="telemetry-box loggernet">
         <div class="tb-label">LoggerNet Server</div>
         <div class="tb-host">Campbell software, MCO-hosted in Docker<br>fcfc-mesonet-ln.cfc.umt.edu:6789</div>
-        <div class="tb-repo">mesonet-ln-docker · mesonet-db</div>
+        <div class="tb-repo"><a class="repo-link" href="https://github.com/mt-climate-office/mesonet-ln" target="_blank" rel="noopener">mesonet-ln</a> · <a class="repo-link" href="https://github.com/mt-climate-office/mesonet-db" target="_blank" rel="noopener">mesonet-db</a></div>
       </div>
     </div>
 
@@ -1077,7 +1100,7 @@ a.product-tile:hover, a.product-tile:focus-visible {
       <div class="timescale">
         <div class="ts-label">PostgreSQL <span class="hosting-badge on-prem">on-premises</span></div>
         <div class="ts-sub">600M+ obs · monthly partitioned · raw → L0 → L1</div>
-        <div class="ts-repo">mesonet-db</div>
+        <div class="ts-repo"><a class="repo-link" href="https://github.com/mt-climate-office/mesonet-db" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);">mesonet-db</a></div>
         <div class="ts-schemas">
           <span class="schema-pill">inventory</span>
           <span class="schema-pill">observations</span>
@@ -1085,33 +1108,33 @@ a.product-tile:hover, a.product-tile:focus-visible {
         </div>
       </div>
 
-      <div class="qc-badge">
+      <a class="qc-badge" href="https://github.com/mt-climate-office/mesonet-qc" target="_blank" rel="noopener">
         <div class="qc-label">QA / QC</div>
         <div class="qc-desc">Range · step · delta · spatial. Nightly. Flags, never deletes.</div>
         <div class="qc-repo">mesonet-qc</div>
-      </div>
+      </a>
       <!-- Repo sub-cards -->
       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 24px;">
-        <div class="qc-badge">
+        <a class="qc-badge" href="https://github.com/mt-climate-office/mesonet-db" target="_blank" rel="noopener">
           <div class="qc-label" style="font-size: 24px;">mesonet-db</div>
           <div class="qc-desc">DB schema, R backfill, cron jobs</div>
           <div class="qc-repo">mesonet-db</div>
-        </div>
-        <div class="qc-badge">
+        </a>
+        <a class="qc-badge" href="https://github.com/mt-climate-office/mesonet-ln" target="_blank" rel="noopener">
           <div class="qc-label" style="font-size: 24px;">mesonet-ln-*</div>
           <div class="qc-desc">LoggerNet server, CRBasic generator</div>
           <div class="qc-repo">mesonet-ln-*</div>
-        </div>
-        <div class="qc-badge">
+        </a>
+        <a class="qc-badge" href="https://github.com/mt-climate-office/mesonet_app" target="_blank" rel="noopener">
           <div class="qc-label" style="font-size: 24px;">mesonet_app</div>
           <div class="qc-desc">FastAPI · public API v2</div>
           <div class="qc-repo">mesonet_app</div>
-        </div>
-        <div class="qc-badge">
+        </a>
+        <a class="qc-badge" href="https://github.com/mt-climate-office/mesonet-aq" target="_blank" rel="noopener">
           <div class="qc-label" style="font-size: 24px;">mesonet-aq</div>
           <div class="qc-desc">PurpleAir archiving</div>
           <div class="qc-repo">mesonet-aq</div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -1180,12 +1203,10 @@ a.product-tile:hover, a.product-tile:focus-visible {
         <div class="partner-outflows">
           <div class="po-title">Partner Outflows</div>
           <div class="po-list">
-            <span class="arrow">→</span> UMRB / US Army Corps<br>
-            <span class="arrow">→</span> Drought indicators<br>
-            <span class="arrow">→</span> Snowpack Explorer<br>
-            <span class="arrow">→</span> Streamflow ML<br>
-            <span class="arrow">→</span> Air Quality<br>
-            <span class="arrow">→</span> Soil retention curves
+            <span class="arrow">→</span> <a href="https://www.drought.gov/drought-research/usace-upper-missouri-river-basin-soil-moisture-and-plains-snow-monitoring-build" target="_blank" rel="noopener" style="color:white;">UMRB / USACE</a><br>
+            <span class="arrow">→</span> <a href="https://mbmg.mtech.edu/gwic" target="_blank" rel="noopener" style="color:white;">GWIC</a><br>
+            <span class="arrow">→</span> <a href="https://nationalmesonet.us" target="_blank" rel="noopener" style="color:white;">National Mesonet Program</a><br>
+            <span class="arrow">→</span> <a href="https://map.piikanilodge.org/map" target="_blank" rel="noopener" style="color:white;">Piikani Lodge Map</a>
           </div>
         </div>
       </div>
